@@ -1,0 +1,46 @@
+<h2 class="text-center my-3 text-danger">
+    Customer
+</h2>
+
+<form [formGroup]="addCustomer" (ngSubmit)="onSubmit">
+    <div class="col-4">
+        <input formControlName="name" type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="col-4">
+        <input formControlName="lastname" type="text" class="form-control" placeholder="Lastname">
+    </div>
+    <div class="col-6">
+        <input formControlName="email" type="email" class="form-control" placeholder="Email">
+    </div>
+    <div class="col-6">
+        <input formControlName="phone" type="text" class="form-control" placeholder="Phone Number">
+    </div>
+    <div class="col-6">
+        <input formControlName="adress" type="text" class="form-control" placeholder="Adress">
+    </div>
+    <div class="col-2">
+        <button [disabled]="addCustomer.invalid" type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+
+<p>Total: {{customers.length}}</p>
+
+<ul class="list-group">
+    
+    <li *ngFor="let customer of customers"
+        class="list-group-item d-flex justify-content-between align-items-center">
+        {{customer.name}} - {{customer.lastname}}- {{customer.email}}- {{customer.phone}}- {{customer.adress}}
+        <div>
+            <a routerLink="/details-customers/{{customer._id}}">
+                <i class="bi bi-eye-fill text-primary"></i>
+            </a>
+            <a routerLink="/edit-customers/{{customer._id}}" class="btn btn-light">
+                <i class="bi bi-pencil text-primary"></i>
+            </a>
+            <button (click)="onDelete(customer)" class="btn btn-light">
+                <i class="bi bi-trash text-danger"></i>
+            </button>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+<form [formGroup]="addCustomer" (ngSubmit)="onSubmit()" class="row mb-4">
+    <div class="mb-3">
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="lastname">Lastname</label>
+        <input formControlName="lastname" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="email">Email</label>
+        <input formControlName="email" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="adress">Adress</label>
+        <input formControlName="adress" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mb-3">
+        <button [disabled]="addCustomer.invalid" type="submit" class="btn btn-primary">
+            Edit Project
+        </button>
+    </div>
+</form>

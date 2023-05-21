@@ -1,0 +1,27 @@
+
+
+<h2 class="text-center my-3 text-danger">
+   Employees
+</h2>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">fullname</th>
+        <th scope="col">email</th>
+        <th scope="col">phone</th>
+        <th scope="col">birthday</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee  of employees">
+        <th scope="row">{{employee.fullname}}</th>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phone}}</td>
+        <td>{{employee.birthday}}</td>
+      </tr>
+  
+    </tbody>
+  </table>
